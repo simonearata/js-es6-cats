@@ -59,9 +59,11 @@ $(document).ready(function() {
     }
   });
   
+  // filtriamo in base al parametro maschio e femmina
   const filtroFemmina = newArrayGatti.filter((gatto) => gatto.sesso === 'femmina');
   const filtroMaschio = newArrayGatti.filter((gatto) => gatto.sesso === 'maschio');
 
+  // aggiungiamo le liste filtrate
   filtroMaschio.forEach((gatto) => {
 
     $('#gatti_maschi ul').append(colorName(gatto.colore, gatto.nome, gatto.ribbon.colore, gatto.ribbon.opacity));
@@ -72,9 +74,11 @@ $(document).ready(function() {
     $('#gatti_femmina ul').append(colorName(gatto.colore, gatto.nome, gatto.ribbon.colore, gatto.ribbon.opacity));
   });
 
+  // creo un array sommando i due array precendentemente filtrati in base al sesso
   const gattiOrdinati = [...filtroFemmina, ...filtroMaschio];
   console.log(gattiOrdinati)
   
+  // creo nuovo array e destrutturo l'oggetto per estrapolare le caratteristiche che ci interessano e le aggiungo
   const gattiNuovi = gattiOrdinati.map((gatto) => {
 
     const {nome, colore, ribbon} = gatto;
