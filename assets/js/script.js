@@ -10,13 +10,13 @@ $(document).ready(function() {
     },
     {
       nome: 'Mimi',
-      età: 3,
+      età: 5,
       colore: '#901780',
       sesso: 'femmina'
     },
     {
       nome: 'Muddy',
-      età: 0.6,
+      età: 2,
       colore: '#23272f',
       sesso: 'maschio'
     },
@@ -38,11 +38,11 @@ $(document).ready(function() {
   gatti.forEach((gatto) => {
    
     $('#gatti ul').append(colorName(gatto.colore, gatto.nome));
-  })
+  });
 
   // colori fiocco
-  const rosa = '#e16c7e';
-  const azzurro = '#819fb3';
+  const rosa = '#ffffff';
+  const azzurro = '#000000';
 
   // creo nuovo array e aggiungo le proprietà del fiocco
   const newArrayGatti = gatti.map((gatto) => {
@@ -57,20 +57,35 @@ $(document).ready(function() {
         opacity
       }
     }
-  })
-
-  const filtroFemmina = newArrayGatti.filter((gatto) => gatto.sesso === ' femmina')
-  const filtroMaschio = newArrayGatti.filter((gatto) => gatto.sesso === ' maschio')
+  });
+  
+  const filtroFemmina = newArrayGatti.filter((gatto) => gatto.sesso === 'femmina');
+  const filtroMaschio = newArrayGatti.filter((gatto) => gatto.sesso === 'maschio');
 
   filtroMaschio.forEach((gatto) => {
 
     $('#gatti_maschi ul').append(colorName(gatto.colore, gatto.nome, gatto.ribbon.colore, gatto.ribbon.opacity));
-  })
+  });
  
   filtroFemmina.forEach((gatto) => {
 
     $('#gatti_femmina ul').append(colorName(gatto.colore, gatto.nome, gatto.ribbon.colore, gatto.ribbon.opacity));
-  })
+  });
+
+  const gattiOrdinati = [...filtroFemmina, ...filtroMaschio];
+  console.log(gattiOrdinati)
+  
+  const gattiNuovi = gattiOrdinati.map((gatto) => {
+
+    const {nome, colore, ribbon} = gatto;
+
+    $('#gatti_ordinati ul').append(colorName(colore, nome, ribbon.colore, ribbon.opacity));
+
+    return {nome, colore, ribbon}
+  });
+
+  
+
 
   // FUNZIONI
   // stamapa il nome e il colore del gatto
@@ -97,18 +112,6 @@ $(document).ready(function() {
 
     return html
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 })

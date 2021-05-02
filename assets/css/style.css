@@ -21,7 +21,7 @@ h2{
   color: white;
 }
 
-ul li{
+#gatti ul li{
   display: flex;
   justify-content: space-around;
   margin: 30px 10px 15px;
@@ -32,12 +32,14 @@ ul li{
   margin-top: 50px;
 }
 
+/* colonna sinistra */
 main .col-left{
   background-color: burlywood;
   box-shadow: 0 5px 10px rgba(0,0,0,.3 );
   padding: 20px 0;
 }
 
+/* colonna centro */
 main .col-up{
   height: 240px;
   position: relative;
@@ -58,17 +60,53 @@ main .col-down{
   font-size: 30px;
 }
 
+/* colonna destra */
+#gatti_maschi ul{
+  padding-top: 25px;
+}
+
+#gatti_maschi ul li{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px 15px;
+}
+
+#gatti_femmina ul{
+  padding-top: 25px;
+}
+
+#gatti_femmina ul li{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px 15px;
+}
+
 main .col-right .col-up{
   background-color: lightskyblue;
   box-shadow: 0 5px 10px rgba(0,0,0,.3 );
+  padding: 20px 0;
 }
 
 main .col-right .col-down{
   background-color: pink;
   box-shadow: 0 5px 10px rgba(0,0,0,.3 );
+  padding: 20px 0;
 }
 
 ul li span{
   display: inline-block;
   width: 10%;
+}
+
+/* gatti ordinati */
+.gt_ordinati{
+  background-color: rgb(223, 234, 235);
+  box-shadow: 0 5px 10px rgba(0,0,0,.3 );
+  margin-top: 20px;
+}
+
+#gatti_ordinati ul li{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px 15px;
 }
